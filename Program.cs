@@ -1,4 +1,4 @@
-using SpacePortDockingAPI.Objects;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +24,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-JSONHandler.appOptions = JSONHandler.LoadOptionsJson();
+Log.Logger = new LoggerConfiguration()
+                            .WriteTo.Console()
+                            .MinimumLevel.Debug()
+                            .WriteTo.File("logs/api-log.txt", rollingInterval: RollingInterval.Day)
+                            .CreateLogger();
 
 app.Run();

@@ -1,3 +1,5 @@
+using SpacePortDockingAPI.Objects;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+JSONHandler.appOptions = JSONHandler.LoadOptionsJson();
 
 app.Run();

@@ -27,6 +27,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+JSONHandler.appOptions = JSONHandler.LoadOptionsJson();
+
 Log.Logger = new LoggerConfiguration()
                             .WriteTo.Console()
                             .MinimumLevel.Debug()

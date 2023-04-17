@@ -11,7 +11,7 @@ namespace SpacePortDockingAPI.Controllers
         [HttpGet]
         public ActionResult<string> TestJSON()
         {
-            return Content(JSONHandler.LoadOptionsJson().database.dbFileName, "text/plain");
+            return Content(JSONHandler.appOptions.database.dbFileName, "text/plain");
         }
     }
 }

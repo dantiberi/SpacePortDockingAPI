@@ -1,5 +1,6 @@
 ﻿using Serilog;
 using Microsoft.EntityFrameworkCore;
+using SpacePortDockingAPI.Models.DatabaseModels;
 
 namespace SpacePortDockingAPI.Objects
 {
@@ -18,5 +19,14 @@ namespace SpacePortDockingAPI.Objects
         // special "local" folder for your platform.
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite($"Data Source={DbPath}");
+
+        // The following configures EF to create a Sqlite database file in the
+        // special "local" folder for your platform.
+        public DbSet<SpacePortDockingAPI.Models.DatabaseModels.Starship>? Starship { get; set; }
+        public DbSet<SpacePortDockingAPI.Models.DatabaseModels.Captain>? Captain { get; set; }
+        public DbSet<SpacePortDockingAPI.Models.DatabaseModels.DockingInvoice>? DockingInvoice { get; set; }
+        public DbSet<SpacePortDockingAPI.Models.DatabaseModels.Faction>? Faction { get; set; }
+        public DbSet<SpacePortDockingAPI.Models.DatabaseModels.ShipClass>? ShipClass { get; set; }
+  
     }
 }

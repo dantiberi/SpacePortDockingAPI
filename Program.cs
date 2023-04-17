@@ -1,6 +1,9 @@
 using Serilog;
+using SpacePortDockingAPI.Objects;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DBDriver>();
 
 // Add services to the container.
 

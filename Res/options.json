@@ -1,5 +1,10 @@
 {
   "database": {
     "dbFileName": "database.db",
+  },
+  "textContent": {
+    "towerTextContent": {
+      "pingMesssage": "ATTENTION VESSEL: You are now in the control sector of Stradic IV, the premeir orbital space station of Bespin. Please promptly register with the control tower or face interception." 
+    }
   }
 }
